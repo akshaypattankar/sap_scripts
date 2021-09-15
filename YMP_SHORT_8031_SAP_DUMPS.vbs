@@ -13,6 +13,10 @@ If IsObject(WScript) Then
    WScript.ConnectObject application, "on"
 End If
 
+StartTime = timer
+
+pocip_location = "C:\_Private Data - NO BACKUP\POCIP\Dumps\8031"
+
 session.findById("wnd[0]").maximize
 session.findById("wnd[0]/tbar[0]/okcd").text = "/nYMP_SHORT"
 session.findById("wnd[0]").sendVKey 0
@@ -25,11 +29,10 @@ session.findById("wnd[0]").sendVKey 8
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").contextMenu
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").selectContextMenuItem "&XXL"
 session.findById("wnd[1]/tbar[0]/btn[0]").press
-session.findById("wnd[1]/usr/ctxtDY_PATH").text = "P:\PPC_Department\Production Order Confirmed Issue Pending\8031\SAP Dumps"
+session.findById("wnd[1]/usr/ctxtDY_PATH").text = pocip_location
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").text = "YMP_SHORT_8031_PCNF_2021.XLSX"
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").caretPosition = 24
 session.findById("wnd[1]/tbar[0]/btn[11]").press
-
 
 session.findById("wnd[0]").maximize
 session.findById("wnd[0]/tbar[0]/okcd").text = "/nYMP_SHORT"
@@ -44,7 +47,7 @@ session.findById("wnd[0]").sendVKey 8
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").contextMenu
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").selectContextMenuItem "&XXL"
 session.findById("wnd[1]").sendVKey 0
-session.findById("wnd[1]/usr/ctxtDY_PATH").text = "P:\PPC_Department\Production Order Confirmed Issue Pending\8031\SAP Dumps"
+session.findById("wnd[1]/usr/ctxtDY_PATH").text = pocip_location
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").text = "YMP_SHORT_8031_CNF_2019_H1.XLSX"
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").caretPosition = 22
 session.findById("wnd[1]/tbar[0]/btn[11]").press
@@ -62,11 +65,10 @@ session.findById("wnd[0]").sendVKey 8
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").contextMenu
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").selectContextMenuItem "&XXL"
 session.findById("wnd[1]").sendVKey 0
-session.findById("wnd[1]/usr/ctxtDY_PATH").text = "P:\PPC_Department\Production Order Confirmed Issue Pending\8031\SAP Dumps"
+session.findById("wnd[1]/usr/ctxtDY_PATH").text = pocip_location
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").text = "YMP_SHORT_8031_CNF_2019_H2.XLSX"
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").caretPosition = 22
 session.findById("wnd[1]/tbar[0]/btn[11]").press
-
 
 session.findById("wnd[0]").maximize
 session.findById("wnd[0]/tbar[0]/okcd").text = "/nYMP_SHORT"
@@ -81,7 +83,7 @@ session.findById("wnd[0]").sendVKey 8
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").contextMenu
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").selectContextMenuItem "&XXL"
 session.findById("wnd[1]").sendVKey 0
-session.findById("wnd[1]/usr/ctxtDY_PATH").text = "P:\PPC_Department\Production Order Confirmed Issue Pending\8031\SAP Dumps"
+session.findById("wnd[1]/usr/ctxtDY_PATH").text = pocip_location
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").text = "YMP_SHORT_8031_CNF_2020_H1.XLSX"
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").caretPosition = 22
 session.findById("wnd[1]/tbar[0]/btn[11]").press
@@ -99,7 +101,7 @@ session.findById("wnd[0]").sendVKey 8
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").contextMenu
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").selectContextMenuItem "&XXL"
 session.findById("wnd[1]").sendVKey 0
-session.findById("wnd[1]/usr/ctxtDY_PATH").text = "P:\PPC_Department\Production Order Confirmed Issue Pending\8031\SAP Dumps"
+session.findById("wnd[1]/usr/ctxtDY_PATH").text = pocip_location
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").text = "YMP_SHORT_8031_CNF_2020_H2.XLSX"
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").caretPosition = 22
 session.findById("wnd[1]/tbar[0]/btn[11]").press
@@ -117,7 +119,7 @@ session.findById("wnd[0]").sendVKey 8
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").contextMenu
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").selectContextMenuItem "&XXL"
 session.findById("wnd[1]").sendVKey 0
-session.findById("wnd[1]/usr/ctxtDY_PATH").text = "P:\PPC_Department\Production Order Confirmed Issue Pending\8031\SAP Dumps"
+session.findById("wnd[1]/usr/ctxtDY_PATH").text = pocip_location
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").text = "YMP_SHORT_8031_CNF_2021_Q1.XLSX"
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").caretPosition = 22
 session.findById("wnd[1]/tbar[0]/btn[11]").press
@@ -135,7 +137,7 @@ session.findById("wnd[0]").sendVKey 8
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").contextMenu
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").selectContextMenuItem "&XXL"
 session.findById("wnd[1]").sendVKey 0
-session.findById("wnd[1]/usr/ctxtDY_PATH").text = "P:\PPC_Department\Production Order Confirmed Issue Pending\8031\SAP Dumps"
+session.findById("wnd[1]/usr/ctxtDY_PATH").text = pocip_location
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").text = "YMP_SHORT_8031_CNF_2021_Q2.XLSX"
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").caretPosition = 22
 session.findById("wnd[1]/tbar[0]/btn[11]").press
@@ -153,7 +155,13 @@ session.findById("wnd[0]").sendVKey 8
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").contextMenu
 session.findById("wnd[0]/usr/cntlGRID1/shellcont/shell").selectContextMenuItem "&XXL"
 session.findById("wnd[1]").sendVKey 0
-session.findById("wnd[1]/usr/ctxtDY_PATH").text = "P:\PPC_Department\Production Order Confirmed Issue Pending\8031\SAP Dumps"
+session.findById("wnd[1]/usr/ctxtDY_PATH").text = pocip_location
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").text = "YMP_SHORT_8031_CNF_2021_Q3.XLSX"
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").caretPosition = 22
 session.findById("wnd[1]/tbar[0]/btn[11]").press
+
+EndTime = timer
+
+DeltaTime = FormatNumber( EndTime - StartTime , 2 ) & " seconds"
+
+MsgBox ( "POCIP 8031 script completed in " & DeltaTime )
