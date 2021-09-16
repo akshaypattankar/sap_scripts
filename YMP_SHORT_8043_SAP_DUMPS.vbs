@@ -1,3 +1,8 @@
+tartTime = timer
+StartDateTime = Now()
+
+'Add the logic of the script after current line
+
 If Not IsObject(application) Then
    Set SapGuiAuto  = GetObject("SAPGUI")
    Set application = SapGuiAuto.GetScriptingEngine
@@ -12,8 +17,6 @@ If IsObject(WScript) Then
    WScript.ConnectObject session,     "on"
    WScript.ConnectObject application, "on"
 End If
-
-StartTime = timer
 
 pocip_location = "C:\_Private Data - NO BACKUP\POCIP\Dumps\8043"
 
@@ -160,8 +163,21 @@ session.findById("wnd[1]/usr/ctxtDY_FILENAME").text = "YMP_SHORT_8043_CNF_2021_Q
 session.findById("wnd[1]/usr/ctxtDY_FILENAME").caretPosition = 22
 session.findById("wnd[1]/tbar[0]/btn[11]").press
 
+   'End of script logic
+   
+log_script_name = "POCIP_8043" 'Add script name for logs
+log_csv_location = "C:\Users\pattankarak\OneDrive - WILO\Scripts\SAP Scripts\Logs\VB_SCRIPT_LOGS.CSV" 'Add file location for log
+
 EndTime = timer
+EndDateTime = Now()
 
-DeltaTime = FormatNumber( EndTime - StartTime , 2 ) & " seconds"
+DeltaTime = FormatNumber( EndTime - StartTime , 2 )
 
-MsgBox ( "POCIP 8043 script completed in " & DeltaTime )
+LogText = log_script_name & "," & StartDateTime & "," & EndDateTime & "," & DeltaTime
+
+Set objFileToWrite = CreateObject("Scripting.FileSystemObject").OpenTextFile(log_csv_location,8,true)
+objFileToWrite.WriteLine(LogText)
+objFileToWrite.Close
+Set objFileToWrite = Nothing
+
+MsgBox ( log_script_name & " script completed in " & DeltaTime  & " seconds")
